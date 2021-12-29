@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MundoRock.Models.Integrante>
+@{
+    ViewData["Title"] = "Integrantes";
+    Layout = "Layout";
+}
+
+<div class="Container">
+    <h1>Integrantes</h1>
+    @foreach (var item in Model)
+    {
+        <div class="divAlbums">
+            <img src="~/Imagenes/Integrantes/@(item.Id).jpg" />
+            <p>@item.Nombre</p>
+         
+        </div>
+
+    }
+</div>
+
+

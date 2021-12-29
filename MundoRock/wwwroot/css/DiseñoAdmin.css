@@ -1,0 +1,263 @@
+﻿@font-face {
+    font-family: 'Bebas Neue', cursive;
+    src: url(/fonts/BebasNeue-Regular.ttf);
+    font-family: 'Permanent Marker', cursive;
+    src: url(/fonts/PermanentMarker-Regular.ttf);
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    margin: 0;
+    background-color: #EDEFEE;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.3em;
+    text-align: center;
+    font-family: 'Permanent Marker';
+}
+
+p {
+    margin-bottom: 1.6em;
+    font-size: 15pt;
+}
+
+.Container {
+    width: 85%;
+    max-width: 850px;
+    margin: 10px auto; /*Cero arriba y abajo y automaticos a los costados*/
+    overflow: hidden;
+    background-color: white;
+}
+
+    .Container p {
+        padding: 10px;
+    }
+
+.header {
+    background: black;
+    padding: 0.1rem 0;
+    color: white;
+    /*position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;*/
+}
+
+    .header a {
+        color: white;
+        text-decoration: none;
+    }
+
+.logo-nave-container {
+    display: flex;
+    /**/ justify-content: space-between;
+    align-items: center;
+    /*margin-left: 10px;*/
+    margin-right: 10px;
+}
+
+    .logo-nave-container img {
+        width: 190px;
+        height: 160px;
+    }
+
+.Navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .Navigation ul li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+        .Navigation ul li a {
+            display: block;
+            padding: 0.5rem 1rem;
+            font-size: 20pt;
+            font-family: 'BebasNeue-Regular';
+            transition: all 0.4s linear;
+        }
+
+            .Navigation ul li a:hover {
+                background: rgb(156, 156, 156);
+            }
+.divAlbums {
+    border: 1px solid #ccc;
+    width: 300px;
+    height: auto;
+    margin: 5px;
+    margin-left: 5px;
+    float: left;
+    /*overflow: hidden;*/
+    
+}
+
+    .divAlbums img {
+        width: 240px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    .divAlbums p {
+        font-family: 'Bebas Neue';
+        font-size: 18pt;
+        margin-left: 10px;
+        margin-top: 5px;
+        color: black;
+        text-align: center;
+    }
+
+.divAlbumsadd {
+    /*border: 1px solid #ccc;*/
+    width: 250px;
+    height: auto;
+    margin: 5px;
+    margin-left: 5px;
+}
+.divAlbumsadd a{
+    text-decoration: none;
+    font-size: 15pt;
+    
+}
+.editar {
+    margin-left: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 14pt;
+}
+
+.eliminar {
+    margin-left: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 14pt;
+}
+
+
+.SectAddLeft{
+    float: left;
+    width: 360px;
+    margin: 10px 5px;
+    padding: 10px;
+    /*background-color: aliceblue;*/
+}
+
+    .SectAddLeft label {
+        font-size: 15pt;
+        font-family: 'Permanent Marker';
+    }
+
+    .SectAddLeft textarea{
+
+    }
+.SectAddRight{
+    float: right;
+    width: 360px;
+    margin: 10px 5px;
+    padding: 10px;
+    /*background-color: aliceblue;*/
+}
+
+.SectAddRight label{
+    font-size: 15pt;
+    font-family: 'Permanent Marker';
+}
+
+.SectAddRight img {
+    width: 240px;
+}
+.botenes{
+    float: left;
+    margin-top: 5px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    /*background-color: aquamarine;*/
+    
+    height: 180px;
+    width: 280px;
+    padding: 20px;
+   
+}
+
+.botenes p{
+    font-size: 10pt;
+    margin: 5px;
+}
+
+
+.Login {
+    margin: 10px auto;
+    border: 1px black solid;
+    height: 280px;
+    width: 60%;
+}
+
+    .Login h1 {
+        font-size: 25pt;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .Login  label {
+        float: left;
+        height: 25px;
+        line-height: 25px;
+        /*box-sizing: border-box; */
+        width: 30%;
+        margin: 0 1% 5px 5px;
+        /*text-transform: uppercase;*/
+        font-size: 13pt;
+    }
+
+    .Login input {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+        height: 25px;
+        line-height: 25px;
+        margin: 0 0 5px 0;
+    }
+
+    .Login p {
+        width: 25%;
+        font-size: 10pt;
+        font-family: 'Bebas Neue';
+        padding: 5px;
+    }
+
+    .Login .button {
+        width: 150px;
+        float: left;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+
+.footer {
+    background-color: black;
+    padding: 1rem 0;
+    text-align: left;
+}
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+.Navigation- ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+    .Navigation- ul li {
+        display: inline-block;
+        margin-left: 10px;
+    }

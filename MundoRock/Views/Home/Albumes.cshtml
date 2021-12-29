@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MundoRock.Models.Album>
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@{
+    ViewData["Title"] = "Albumes";
+    Layout = "Layout";
+}
+
+
+
+<div class="Container">
+    <h1>Albumes de la banda</h1>
+    @foreach (var item in Model)
+    {
+        <div class="divAlbums">
+            <a href="~/@(item.Nombre.Replace(" ", "-"))/Datos">
+                @if (System.IO.File.Exists($"{env.WebRootPath}/Imagenes/Albumes/{item.Id}_a.jpg"))
+                {
+                    <img src="~/Imagenes/Albumes/@(item.Id)_a.jpg" />
+                }
+                else
+                {
+                    <img src="~/Imagenes/noalbum.png" />
+                }
+            </a>
+            <p>@item.Nombre</p>
+            <a class="boton" href="~/@(item.Nombre.Replace(" ","-"))/Reseña">Reseña del album</a>
+        </div>
+    }
+</div>
+

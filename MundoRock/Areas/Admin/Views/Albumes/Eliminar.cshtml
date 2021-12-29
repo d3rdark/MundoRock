@@ -1,0 +1,27 @@
+﻿@model MundoRock.Models.Album
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "LayoutAdmin";
+}
+
+<form method="post" action="~/Admin/Albumes/Eliminar">
+    <div class="Container">
+        <h1>Eliminar reseña</h1>
+        <input type="hidden" id="idAlbum" asp-for="@Model.Id" />
+        <p>¿Deseas eliminar la Reseña "@Model.Nombre"? </p> 
+
+        <div class="botenes">
+            <p id="error" asp-validation="true">
+                @Html.ValidationSummary()
+            </p>
+            <input type="submit" value="Eliminar" id="btnEliminar" />
+
+            <a href="~/Admin/Albumes">
+                <input type="button" value="Cancelar" id="btnCancelar" />
+            </a>
+        </div>
+    </div>
+</form>
+
+

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/Diseño.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="container logo-nave-container">
+            <a href="~/" class="logo"><img src="~/Imagenes/logo.png"/></a>
+            <nav class="Navigation">
+                <ul>
+                    <li><a href="~/Home/Albumes"> Álbumes</a></li>
+                    <li><a href="~/Home/Integrantes">Integrantes de la banda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <main class="main">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="Container-">
+            <nav class="Navigation-">
+                <ul>
+                    <li><a href="https://www.facebook.com/ulisestadeo.perezgarcia">Ulises Perez</a></li>
+                    <li><a href="https://www.facebook.com/alejandro.elguezabal.92">Alejandro Valdes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
+

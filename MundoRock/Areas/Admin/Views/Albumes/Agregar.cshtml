@@ -1,0 +1,62 @@
+﻿@model MundoRock.Models.Album
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Agregar";
+    Layout = "LayoutAdmin";
+}
+
+<div class="Container">
+    <form method="post" action="~/Admin/Albumes/Agregar" enctype="multipart/form-data">
+        <h1>Agregar un album</h1>
+        <section class="SectAddLeft">
+            <label>Nombre del album</label> <br />
+            <input type="text" id="txtNombre" required asp-for="@Model.Nombre" /> <br />
+            <label>Descripcion</label><br />
+            <textarea rows="8" cols="20" id="txtDescripcion" required asp-for="@Model.Descripcion"></textarea><br />
+            <label>Fecha de lanzamiento</label> <br />
+            <input type="date" id="dateLanzamiento" required asp-for="@Model.Lanzamiento" /><br />
+            <label>Genero</label><br />
+            <input type="text" id="txtGenero" required asp-for="@Model.Genero" /><br />
+
+
+        </section>
+
+        <section class="SectAddRight">
+            <label>Imagen del album</label><br />
+            <input type="file" id="fileUpload1" name="archivo1" accept="image/jpg" /> <br />
+            <img id="imagePreview" src="~/Imagenes/noalbum.png" alt="Vista previa de la imagen" />
+        </section>
+
+        <div class="botenes">
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <input class="button" type="submit" value="Agregar" id="btnAgregar" />
+            <a href="~/Admin/Albumes">
+                <input type="button" value="Cancelar" id="btnCancelar" />
+            </a>
+           
+        </div>
+
+
+    </form>
+
+</div>
+<script>
+    function mostrarImagen(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.querySelector('#imagePreview').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0])
+        }
+    }
+
+
+    document.querySelector('#fileUpload1').addEventListener("change", event => {
+        mostrarImagen(event.target)
+    });
+</script>
+
+

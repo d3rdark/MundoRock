@@ -1,0 +1,27 @@
+﻿@model MundoRock.Models.Reseña
+@{
+    ViewData["Title"] = "Reseña";
+    Layout = "Layout";
+}
+
+
+<div class="Container">
+    <h1>@Model.Nombre</h1>
+    <section>
+        <h2>Reseña de @Model.IdalbumNavigation.Nombre</h2>
+        <p>
+            @Html.Raw(Model.Informacion.Replace("\n", "<br />"))
+        </p>
+    </section>
+
+    <section>
+        <h3>Imagen del album</h3>
+        <img src="~/Imagenes/Albumes/@(Model.IdalbumNavigation.Id)_a.jpg" />
+    </section>
+
+    <section class="SectRight">
+        <a href="~/Home/Albumes">Regresar</a>
+    </section>
+    
+</div>
+

@@ -1,0 +1,32 @@
+﻿@model MundoRock.Models.Album
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env
+@{
+    ViewData["Title"] = "DAlbumes";
+    Layout = "Layout";
+}
+
+
+
+<div class="Container">
+    <h1>Información de @Model.Nombre</h1>
+    <section class="SectRight">
+        <h2>Descripcion</h2>
+        <p>@Html.Raw(Model.Descripcion.Replace("\n", "<br />"))</p>
+        <label>Fecha de lanzamiento: </label>
+        <span>@Model.Lanzamiento.ToShortDateString()</span> <br />
+        <label>Genero: </label> <span>@Model.Genero</span>
+        <a href="~/Home/Albumes">Regresar</a>
+    </section>
+
+    <section class="SectLeft">
+        @if (System.IO.File.Exists($"{env.WebRootPath}/Imagenes/Albumes/{Model.Id}_a.jpg"))
+        {
+            <img src="~/Imagenes/Albumes/@(Model.Id)_a.jpg" />
+        }
+        else
+        {
+            <img src="~/Imagenes/noalbum.png" />
+        }
+    </section>
+</div>
+

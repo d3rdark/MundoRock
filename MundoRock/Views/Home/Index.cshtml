@@ -1,0 +1,13 @@
+﻿@model MundoRock.Models.Bandum
+@{
+    ViewData["Title"] = "Index";
+    Layout = "Layout";
+}
+
+
+<div class="Container">
+    <h1>@Model.Nombre</h1>
+    <p>@Html.Raw(Model.Descripcion.Replace("\n", "<br />"))</p>
+    <img class="imgbanda" src="~/Imagenes/Banda/FB_IMG_1639115655360.jpg" />
+</div>
+

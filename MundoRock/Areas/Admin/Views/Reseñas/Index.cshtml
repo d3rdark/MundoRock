@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MundoRock.Models.Reseña>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "LayoutAdmin";
+}
+
+<div class="Container">
+    <h1>Reseñas de los albumes</h1>
+    <div class="divAlbumsadd">
+        <a href="~/Admin/Reseñas/Agregar">
+            Crear una reseña
+        </a>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="divAlbums">
+            <img src="~/Imagenes/Albumes/@(item.Idalbum)_a.jpg" alt="Alternate Text" />
+            <p>@item.Nombre</p>
+            <a class="editar" href="~/Admin/Reseñas/Editar/@item.Id">Editar</a>
+
+            @if (User.IsInRole("Administrador"))
+            {
+                <a class="eliminar" href="~/Admin/Reseñas/Eliminar/@item.Id">Eliminar</a>
+            }
+           
+        </div>
+
+    }
+</div>

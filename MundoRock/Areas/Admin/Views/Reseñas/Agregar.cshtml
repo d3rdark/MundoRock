@@ -1,0 +1,32 @@
+﻿@model MundoRock.Areas.Admin.Models.MundoRockViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Agregar";
+    Layout = "LayoutAdmin";
+}
+
+<div class="Container">
+    <form method="post" action="~/Admin/Reseñas/Agregar">
+        <h1>Crear una reseña</h1>
+        <section>
+            <label>Nombre de la reseña</label><br />
+            <input type="text" required id="txtNombre" asp-for="Reseñas.Nombre" /><br />
+            <label>Seleccionar album</label><br />
+            <select id="cmbAlbum" asp-for="Reseñas.Idalbum" asp-items="@(new SelectList(Model.Albumes, "Id", "Nombre"))">
+                <option selected="selected" value="">--Seleccionar album--</option>
+            </select><br />
+            <label>Reseña del album</label><br />
+            <textarea rows="8" cols="20" id="txtInformacion" required asp-for="Reseñas.Informacion"></textarea>
+        </section>
+        <div class="botenes">
+            <p id="error">
+                @Html.ValidationSummary()
+            </p>
+            <input class="button" type="submit" value="Agregar" id="btnAgregar" />
+            <a href="~/Admin/Reseñas">
+                <input type="button" value="Cancelar" id="btnCancelar" />
+            </a>
+        </div>
+    </form>
+</div>
+
